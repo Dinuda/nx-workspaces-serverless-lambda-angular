@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx-workspaces-serverless-lambda-angular/database": [
+        "libs/database/src/index.ts"
+      ],
+      "@nx-workspaces-serverless-lambda-angular/environment": [
+        "environments/environment.ts"
+      ],
+      "@nx-workspaces-serverless-lambda-angular/http/*": [
+        "libs/http/src/lib/*"
+      ],
+      "@nx-workspaces-serverless-lambda-angular/hello/*": [
+        "services/hello/src/lib/*"
+      ],
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

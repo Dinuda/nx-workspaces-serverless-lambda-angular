@@ -1,7 +1,5 @@
 import type { AWS } from '@serverless/typescript';
 
-import hello from '@functions/hello';
-
 const serverlessConfiguration: AWS = {
   service: 'nx-workspaces-serverless-lambda-angular',
   frameworkVersion: '3',
@@ -19,7 +17,19 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { 
+    'hello': {
+      handler: 'services/hello/src/lib/hello.ts',
+      events: [
+        {
+          http: {
+            method: 'post',
+            path: 'hello',
+          },
+        },
+      ],
+    },
+   },
   package: { individually: true },
   custom: {
     esbuild: {

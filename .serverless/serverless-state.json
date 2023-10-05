@@ -135,7 +135,8 @@
                         "Effect": "Allow",
                         "Action": [
                           "logs:CreateLogStream",
-                          "logs:CreateLogGroup"
+                          "logs:CreateLogGroup",
+                          "logs:TagResource"
                         ],
                         "Resource": [
                           {
@@ -181,9 +182,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/nx-workspaces-serverless-lambda-angular/dev/1696520237732-2023-10-05T15:37:17.732Z/hello.zip"
+                "S3Key": "serverless/nx-workspaces-serverless-lambda-angular/dev/1696531093716-2023-10-05T18:38:13.716Z/hello.zip"
               },
-              "Handler": "src/functions/hello/handler.main",
+              "Handler": "services/hello/src/lib/hello.ts",
               "Runtime": "nodejs14.x",
               "FunctionName": "nx-workspaces-serverless-lambda-angular-dev-hello",
               "MemorySize": 1024,
@@ -205,14 +206,14 @@
               "HelloLogGroup"
             ]
           },
-          "HelloLambdaVersion2es3Sv8mauQnbLxLAHTjUD5JRrPJ9X6722VIEmFo": {
+          "HelloLambdaVersionNtAJ6HhYVaCx4C1blkZoxMGtGT4bHE26u1rFV0H3Y4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "IJfrlUasLql/IUviwhqPDVu6EEgN2jKhOPxny7a+tqA="
+              "CodeSha256": "jMR8+zy1na/RdQMiJTgbW3qxhazunLeSZPKTaBJ0sHM="
             }
           },
           "ApiGatewayRestApi": {
@@ -283,52 +284,13 @@
                   ]
                 }
               },
-              "MethodResponses": [],
-              "RequestValidatorId": {
-                "Ref": "ApiGatewayNxworkspacesserverlesslambdaangularRequestValidator"
-              },
-              "RequestModels": {
-                "application/json": {
-                  "Ref": "ApiGatewayMethodHelloPostApplicationJsonModel"
-                }
-              }
+              "MethodResponses": []
             },
             "DependsOn": [
               "HelloLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayNxworkspacesserverlesslambdaangularRequestValidator": {
-            "Type": "AWS::ApiGateway::RequestValidator",
-            "Properties": {
-              "RestApiId": {
-                "Ref": "ApiGatewayRestApi"
-              },
-              "ValidateRequestBody": true,
-              "ValidateRequestParameters": true,
-              "Name": "nx-workspaces-serverless-lambda-angular-dev | Validate request body and querystring parameters"
-            }
-          },
-          "ApiGatewayMethodHelloPostApplicationJsonModel": {
-            "Type": "AWS::ApiGateway::Model",
-            "Properties": {
-              "RestApiId": {
-                "Ref": "ApiGatewayRestApi"
-              },
-              "ContentType": "application/json",
-              "Schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "name"
-                ]
-              }
-            }
-          },
-          "ApiGatewayDeployment1696520235708": {
+          "ApiGatewayDeployment1696531092816": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -390,7 +352,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersion2es3Sv8mauQnbLxLAHTjUD5JRrPJ9X6722VIEmFo"
+              "Ref": "HelloLambdaVersionNtAJ6HhYVaCx4C1blkZoxMGtGT4bHE26u1rFV0H3Y4"
             },
             "Export": {
               "Name": "sls-nx-workspaces-serverless-lambda-angular-dev-HelloLambdaFunctionQualifiedArn"
@@ -528,32 +490,25 @@
     "pluginsData": {},
     "functions": {
       "hello": {
-        "handler": "src/functions/hello/handler.main",
+        "handler": "services/hello/src/lib/hello.ts",
         "events": [
           {
             "http": {
               "method": "post",
               "path": "hello",
-              "request": {
-                "schemas": {
-                  "application/json": {
-                    "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"ApiGatewayMethodHelloPostApplicationJsonModel\"][\"Properties\"][\"Schema\"]"
-                  }
-                }
-              },
               "integration": "AWS_PROXY"
             }
           }
         ],
         "name": "nx-workspaces-serverless-lambda-angular-dev-hello",
         "package": {
-          "artifact": "/Users/dinudayaggahavita/Documents/nx-workspaces-serverless-lambda-angular/.serverless/hello.zip"
+          "artifact": ".serverless/hello.zip"
         },
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs14.x",
         "vpc": {},
-        "versionLogicalId": "HelloLambdaVersion2es3Sv8mauQnbLxLAHTjUD5JRrPJ9X6722VIEmFo"
+        "versionLogicalId": "HelloLambdaVersionNtAJ6HhYVaCx4C1blkZoxMGtGT4bHE26u1rFV0H3Y4"
       }
     },
     "configValidationMode": "warn",
@@ -583,7 +538,7 @@
   },
   "package": {
     "individually": true,
-    "artifactDirectoryName": "serverless/nx-workspaces-serverless-lambda-angular/dev/1696520237732-2023-10-05T15:37:17.732Z",
+    "artifactDirectoryName": "serverless/nx-workspaces-serverless-lambda-angular/dev/1696531093716-2023-10-05T18:38:13.716Z",
     "artifact": ""
   }
 }
