@@ -1,5 +1,5 @@
 {
-  "name": "nx-serverless-template",
+  "name": "nx-workspaces-serverless-lambda-angular",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -85,6 +85,7 @@
   },
   "packageManager": "yarn@3.6.4",
   "dependencies": {
+    "@aws-sdk/util-dynamodb": "^3.438.0",
     "@swc/helpers": "0.5.2",
     "tslib": "2.6.2"
   }

@@ -10,15 +10,30 @@
     "importHelpers": false,
     "target": "es2022",
     "module": "commonjs",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-serverless-template/workspace-plugin": [
+      "@nx-workspaces-serverless-lambda-angular/db": [
+        "libs/db/src/index.ts"
+      ],
+      "@nx-workspaces-serverless-lambda-angular/workspace-plugin": [
         "tools/workspace-plugin/src/index.ts"
-      ]
+      ],
+      "@nx-workspaces-serverless-lambda-angular/api": [
+        "libs/api/src/index.ts"
+      ],
+      "@nx-workspaces-serverless-lambda-angular/env": [
+        "environments/environment.ts"
+      ],
+
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

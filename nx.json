@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-serverless-template",
+  "npmScope": "nx-workspaces-serverless-lambda-angular",
   "affected": {
     "defaultBase": "main"
   },
