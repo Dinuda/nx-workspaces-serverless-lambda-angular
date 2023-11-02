@@ -1,0 +1,445 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.0.2",
+  "deps": {
+    "@aws-sdk/util-dynamodb": "^3.438.0",
+    "@middy/core": "^4.6.5",
+    "@middy/http-json-body-parser": "^4.6.5",
+    "@swc/helpers": "0.5.2",
+    "jsonwebtoken": "^9.0.2",
+    "tslib": "2.6.2",
+    "yup": "^1.3.2",
+    "@aws-sdk/types": "3.433.0",
+    "@jest/transform": "29.7.0",
+    "@nrwl/tao": "16.5.5",
+    "@nx/devkit": "16.5.5",
+    "@nx/eslint-plugin": "16.5.5",
+    "@nx/jest": "16.5.5",
+    "@nx/js": "16.5.5",
+    "@nx/linter": "16.5.5",
+    "@nx/node": "16.5.5",
+    "@nx/plugin": "16.5.5",
+    "@nx/workspace": "16.5.5",
+    "@swc-node/register": "1.6.8",
+    "@swc/cli": "0.1.62",
+    "@swc/core": "1.3.92",
+    "@types/aws-lambda": "8.10.125",
+    "@types/jest": "29.5.7",
+    "@types/node": "18.18.7",
+    "@types/serverless": "3.12.17",
+    "@typescript-eslint/eslint-plugin": "6.9.1",
+    "@typescript-eslint/parser": "6.9.1",
+    "esbuild": "0.19.3",
+    "eslint": "8.52.0",
+    "eslint-config-prettier": "9.0.0",
+    "husky": "8.0.3",
+    "jest": "29.7.0",
+    "jest-environment-node": "29.7.0",
+    "lint-staged": "14.0.1",
+    "nx-cloud": "16.5.2",
+    "prettier": "3.0.3",
+    "serverless": "3.36.0",
+    "serverless-esbuild": "1.48.5",
+    "serverless-jest-plugin": "0.4.0",
+    "serverless-offline": "12.0.4",
+    "ts-jest": "29.1.1",
+    "ts-loader": "9.5.0",
+    "ts-node": "10.9.1",
+    "typescript": "5.2.2"
+  },
+  "pathMappings": {
+    "@nx-workspaces-serverless-lambda-angular/api": [
+      "libs/api/src/index.ts"
+    ],
+    "@nx-workspaces-serverless-lambda-angular/db": [
+      "libs/db/src/index.ts"
+    ],
+    "@nx-workspaces-serverless-lambda-angular/env": [
+      "environments/environment.ts"
+    ],
+    "@nx-workspaces-serverless-lambda-angular/http": [
+      "libs/http/src/index.ts"
+    ],
+    "@nx-workspaces-serverless-lambda-angular/workspace-plugin": [
+      "tools/workspace-plugin/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18184241539474099069"
+      },
+      {
+        "file": ".github/workflows/codeql-analysis.yml",
+        "hash": "5819747454660433887"
+      },
+      {
+        "file": ".github/workflows/main.yml",
+        "hash": "13131908237118133535"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "8215031051752185698"
+      },
+      {
+        "file": ".husky/.gitignore",
+        "hash": "10106645302852536800"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "15057229804480021109"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "5185248025180765966"
+      },
+      {
+        "file": ".nx/cache/d/daemon.log",
+        "hash": "3167942457347839770"
+      },
+      {
+        "file": ".nx/cache/d/server-process.json",
+        "hash": "8182051950817604202"
+      },
+      {
+        "file": ".nx/cache/file-map.json",
+        "hash": "5741474630174909402"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "8591250870479326157"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "17090064331936625923"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "12432018478783408348"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "17733650430415207254"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "3415948397121134253"
+      },
+      {
+        "file": "README.md",
+        "hash": "6864206918811302065"
+      },
+      {
+        "file": "environments/environment.prod.ts",
+        "hash": "11743232900746506972"
+      },
+      {
+        "file": "environments/environment.serverless.ts",
+        "hash": "14999539475012038717"
+      },
+      {
+        "file": "environments/environment.stg.ts",
+        "hash": "4467765318305633590"
+      },
+      {
+        "file": "environments/environment.ts",
+        "hash": "377885115804320819"
+      },
+      {
+        "file": "environments/environment.types.ts",
+        "hash": "1713252983682039504"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "3043955743117537865"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "libs/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "nx.json",
+        "hash": "13399042054005823978"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "11459955032515201058"
+      },
+      {
+        "file": "package.json",
+        "hash": "6969138219053539114"
+      },
+      {
+        "file": "renovate.json",
+        "hash": "8382436722212787669"
+      },
+      {
+        "file": "serverless.base.ts",
+        "hash": "5993861190044998787"
+      },
+      {
+        "file": "stacks/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "12719580677653578668"
+      }
+    ],
+    "projectFileMap": {
+      "db": [
+        {
+          "file": "libs/db/.eslintrc.json",
+          "hash": "2295303304320410742"
+        },
+        {
+          "file": "libs/db/README.md",
+          "hash": "9900417854534903833"
+        },
+        {
+          "file": "libs/db/jest.config.ts",
+          "hash": "17373222097252496020"
+        },
+        {
+          "file": "libs/db/project.json",
+          "hash": "7215263766364734698"
+        },
+        {
+          "file": "libs/db/src/lib/client.ts",
+          "hash": "13965070732406475848",
+          "deps": [
+            "npm:aws-sdk",
+            "npm:@nx-workspaces-serverless-lambda-angular/env"
+          ]
+        },
+        {
+          "file": "libs/db/src/lib/error.ts",
+          "hash": "4246248275945731069"
+        },
+        {
+          "file": "libs/db/src/lib/item.ts",
+          "hash": "7029760662470361323",
+          "deps": [
+            "npm:aws-sdk",
+            "npm:@aws-sdk/util-dynamodb"
+          ]
+        },
+        {
+          "file": "libs/db/src/lib/operations.ts",
+          "hash": "11075354575200483023",
+          "deps": [
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/db/src/lib/transaction.ts",
+          "hash": "12165918111604309302",
+          "deps": [
+            "npm:aws-sdk"
+          ]
+        },
+        {
+          "file": "libs/db/tsconfig.json",
+          "hash": "2840670722752396445"
+        },
+        {
+          "file": "libs/db/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/db/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "http": [
+        {
+          "file": "libs/http/.eslintrc.json",
+          "hash": "2295303304320410742"
+        },
+        {
+          "file": "libs/http/README.md",
+          "hash": "12430061535528408967"
+        },
+        {
+          "file": "libs/http/jest.config.ts",
+          "hash": "4988358397750535888"
+        },
+        {
+          "file": "libs/http/project.json",
+          "hash": "17193781925929668825"
+        },
+        {
+          "file": "libs/http/src/index.ts",
+          "hash": "2189780915740319255"
+        },
+        {
+          "file": "libs/http/src/lib/auth.middleware.ts",
+          "hash": "1729455566314407956",
+          "deps": [
+            "npm:@middy/core",
+            "npm:aws-lambda",
+            "npm:jsonwebtoken",
+            "npm:@nx-workspaces-serverless-lambda-angular/env"
+          ]
+        },
+        {
+          "file": "libs/http/src/lib/handlers.ts",
+          "hash": "7797233320744504051",
+          "deps": [
+            "npm:@middy/core",
+            "npm:@middy/http-json-body-parser"
+          ]
+        },
+        {
+          "file": "libs/http/src/lib/response.ts",
+          "hash": "13826373494606952596",
+          "deps": [
+            "npm:aws-lambda"
+          ]
+        },
+        {
+          "file": "libs/http/src/lib/schema-validator.middleware.ts",
+          "hash": "3105437223846512387",
+          "deps": [
+            "npm:yup",
+            "npm:@middy/core",
+            "npm:aws-lambda"
+          ]
+        },
+        {
+          "file": "libs/http/src/lib/types.ts",
+          "hash": "16619693734899651190",
+          "deps": [
+            "npm:aws-lambda"
+          ]
+        },
+        {
+          "file": "libs/http/tsconfig.json",
+          "hash": "2840670722752396445"
+        },
+        {
+          "file": "libs/http/tsconfig.lib.json",
+          "hash": "8188472110264778699"
+        },
+        {
+          "file": "libs/http/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ],
+      "workspace-plugin": [
+        {
+          "file": "tools/workspace-plugin/.eslintrc.json",
+          "hash": "17146823442606452149"
+        },
+        {
+          "file": "tools/workspace-plugin/generators.json",
+          "hash": "7804964185216891275"
+        },
+        {
+          "file": "tools/workspace-plugin/jest.config.ts",
+          "hash": "9740162403607036824"
+        },
+        {
+          "file": "tools/workspace-plugin/package.json",
+          "hash": "17936386830703340919"
+        },
+        {
+          "file": "tools/workspace-plugin/project.json",
+          "hash": "11994343982180561491"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/files/.eslintrc.json__tmpl__",
+          "hash": "17238922736563039435"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/files/README.md",
+          "hash": "15922346557990406162"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/files/serverless.ts__tmpl__",
+          "hash": "14957460909982684347"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/files/src/handler.ts__tmpl__",
+          "hash": "7999290461790405577"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/files/tsconfig.app.json",
+          "hash": "12876630147226789140"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/files/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/files/tsconfig.spec.json",
+          "hash": "14923180086576996015"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/index.ts",
+          "hash": "2828911778607480631",
+          "deps": [
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/jest-config.ts",
+          "hash": "508888722954833612",
+          "deps": [
+            "npm:@nx/devkit",
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/schema.json",
+          "hash": "16567354243218813826"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/schema.ts",
+          "hash": "13316192744297651791"
+        },
+        {
+          "file": "tools/workspace-plugin/src/generators/serverless/workspace-config.ts",
+          "hash": "2712685323659846277",
+          "deps": [
+            "npm:@nx/devkit"
+          ]
+        },
+        {
+          "file": "tools/workspace-plugin/src/index.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "tools/workspace-plugin/tsconfig.json",
+          "hash": "2840670722752396445"
+        },
+        {
+          "file": "tools/workspace-plugin/tsconfig.lib.json",
+          "hash": "3632393694954060084"
+        },
+        {
+          "file": "tools/workspace-plugin/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        }
+      ]
+    }
+  }
+}

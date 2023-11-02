@@ -17,19 +17,21 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-workspaces-serverless-lambda-angular/db": [
-        "libs/db/src/index.ts"
-      ],
-      "@nx-workspaces-serverless-lambda-angular/workspace-plugin": [
-        "tools/workspace-plugin/src/index.ts"
-      ],
       "@nx-workspaces-serverless-lambda-angular/api": [
         "libs/api/src/index.ts"
+      ],
+      "@nx-workspaces-serverless-lambda-angular/db": [
+        "libs/db/src/index.ts"
       ],
       "@nx-workspaces-serverless-lambda-angular/env": [
         "environments/environment.ts"
       ],
-
+      "@nx-workspaces-serverless-lambda-angular/http": [
+        "libs/http/src/index.ts"
+      ],
+      "@nx-workspaces-serverless-lambda-angular/workspace-plugin": [
+        "tools/workspace-plugin/src/index.ts"
+      ]
     }
   },
   "exclude": [

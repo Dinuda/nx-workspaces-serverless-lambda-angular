@@ -10,7 +10,7 @@ AWS.config.update({
 
 let client: DynamoDB | null = null;
 
-export function getClient() {
+export function getClient(tableName: string) {
   if (!client) {
     const options = {
       endpoint: env.dynamo.endpoint,
@@ -25,6 +25,6 @@ export function getClient() {
 
   return {
     db: client,
-    TableName: env.dynamo.tableName,
+    TableName: tableName,
   };
 }

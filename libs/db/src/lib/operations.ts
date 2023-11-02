@@ -5,9 +5,10 @@ import { dbErrorLogger } from './error';
 
 export async function createItem<T extends Item<any>>(
   item: T,
-  options?: Omit<DynamoDB.PutItemInput, 'TableName'>
+  tableName: string,
+  options?: Omit<DynamoDB.PutItemInput, 'TableName'>,
 ) {
-  const { TableName, db } = getClient();
+  const { TableName, db } = getClient(tableName);
 
   try {
     return await db
@@ -29,9 +30,10 @@ export async function createItem<T extends Item<any>>(
 
 export async function updateItem(
   keys: ItemKeys,
+  tableName: string,
   options?: Omit<DynamoDB.UpdateItemInput, 'TableName' | 'Key'>
 ) {
-  const { TableName, db } = getClient();
+  const { TableName, db } = getClient(tableName);
 
   try {
     return await db
@@ -52,9 +54,10 @@ export async function updateItem(
 
 export async function deleteItem(
   keys: ItemKeys,
+  tableName: string,
   options?: Omit<DynamoDB.DeleteItemInput, 'TableName'>
 ) {
-  const { TableName, db } = getClient();
+  const { TableName, db } = getClient(tableName);
 
   try {
     await db
@@ -73,8 +76,9 @@ export async function deleteItem(
   }
 }
 
-export async function query(options: Omit<DynamoDB.QueryInput, 'TableName'>) {
-  const { TableName, db } = getClient();
+export async function query(options: Omit<DynamoDB.QueryInput, 'TableName'>, tableName: string) {
+  
+  const { TableName, db } = getClient(tableName);
 
   try {
     return await db
@@ -94,9 +98,10 @@ export async function query(options: Omit<DynamoDB.QueryInput, 'TableName'>) {
 
 export async function getItem(
   keys: ItemKeys,
+  tableName: string,
   options?: Omit<DynamoDB.GetItemInput, 'TableName'>
 ) {
-  const { TableName, db } = getClient();
+  const { TableName, db } = getClient(tableName);
 
   try {
     return await db
